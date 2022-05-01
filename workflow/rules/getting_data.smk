@@ -1,0 +1,2 @@
+rule getting_data:
+    
