@@ -1,2 +1,0 @@
-rule getting_data:
-    
