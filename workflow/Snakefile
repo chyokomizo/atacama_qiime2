@@ -1,0 +1,5 @@
+rule all: 
+    input: 
+        epairedend = "results/importqza/emp-paired-end-sequences.qza"
+
+include: "rules/demux.smk"
