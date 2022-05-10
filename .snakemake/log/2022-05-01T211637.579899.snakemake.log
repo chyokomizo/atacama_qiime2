@@ -1,3 +1,0 @@
-SyntaxError in line 13 of /home/chyokomizo/metagenomics/atacama_qiime2/workflow/rules/demux.smk:
-Command must be given as string after the shell keyword. (demux.smk, line 13)
-  File "/home/chyokomizo/metagenomics/atacama_qiime2/workflow/Snakefile", line 5, in <module>

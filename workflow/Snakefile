@@ -1,5 +1,13 @@
 rule all: 
     input: 
-        epairedend = "results/importqza/emp-paired-end-sequences.qza"
+        epairedend = "results/importqza/emp-paired-end-sequences.qza",
+        demuxfull = "results/demultiplex/demux-full.qza",
+        demuxsub = "results/subsamples/demux-subsample.qza",
+        demuxsumm = "results/subsamples/demux-subsample.qzv",
+        #"demuxqza = "results/demux.qza",
 
+
+include: "rules/emppaired.smk"
 include: "rules/demux.smk"
+include: "rules/subsamples.smk"
+include: "rules/filter_samples.smk"

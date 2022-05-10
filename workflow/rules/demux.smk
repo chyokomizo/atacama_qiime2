@@ -1,14 +1,21 @@
+#TODO : log estava impedindo de rodar, precisa consertar isso
+
 rule demux:
     input: 
-        for = "../data/emp-paired-end-sequences/forward.fastq.gz",
-        rev = "../data/emp-paired-end-sequences/reverse.fastq.gz",
-        barcodes = "../data/emp-paired-end-sequences/barcodes.fastq.gz",
+        epairedend = "results/importqza/emp-paired-end-sequences.qza",
     output:
-        epairedend = "results/importqza/emp-paired-end-sequences.qza"
-    log: 
-        "results/logs/emp-paired-end-sequences.qza.log"
+        demuxfull = "results/demultiplex/demux-full.qza", 
+        demuxdet = "results/demultiplex/demux-details.qza",
     conda: 
         "../envs/qiime2-2022.2.yml"
+    log: 
+        ""
     shell: 
-    "qiime tools import --type EMPPairedEndSequences --input-path {input.for} {input.rev} {input.barcodes} --output-path {output.epairedend}"
-
+        "qiime demux emp-paired" 
+        " --m-barcodes-file data/sample-metadata.tsv"
+        " --m-barcodes-column barcode-sequence"
+        " --p-rev-comp-mapping-barcodes"
+        " --i-seqs {input.epairedend}"
+        " --o-per-sample-sequences {output.demuxfull}"
+        " --o-error-correction-details {output.demuxdet}"
+    
