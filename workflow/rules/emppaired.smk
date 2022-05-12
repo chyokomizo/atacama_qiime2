@@ -11,8 +11,8 @@ rule emppaired:
         "../envs/qiime2-2022.2.yml" #aqui volta uma pasta
     shell: 
         #2>&1 {log} envia erro e prints da tela para o log 
-        "qiime tools import " 
-        "--type EMPPairedEndSequences "
-        "--input-path data/emp-paired-end-sequences/ "
-        "--output-path {output.epairedend}"
+        "qiime tools import" 
+        " --type EMPPairedEndSequences"
+        " --input-path data/emp-paired-end-sequences/"
+        " --output-path {output.epairedend}"
 

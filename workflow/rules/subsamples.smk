@@ -5,8 +5,6 @@ rule subsamples_paired:
         demuxsub = "results/subsamples/demux-subsample.qza",
     conda: 
         "../envs/qiime2-2022.2.yml"
-    log:
-
     shell: 
         "qiime demux subsample-paired"
         " --i-sequences {input.demuxfull}"
@@ -20,10 +18,6 @@ rule subsamples_summarize:
         demuxsumm = "results/subsamples/demux-subsample.qzv",
     conda: 
         "../envs/qiime2-2022.2.yml"
-    params: 
-
-    log:
-    
     shell: 
         "qiime demux summarize"
         " --i-data {input}"

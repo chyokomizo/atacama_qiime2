@@ -1,10 +1,10 @@
 rule all: 
     input: 
-        epairedend = "results/importqza/emp-paired-end-sequences.qza",
-        demuxfull = "results/demultiplex/demux-full.qza",
-        demuxsub = "results/subsamples/demux-subsample.qza",
-        demuxsumm = "results/subsamples/demux-subsample.qzv",
-        #"demuxqza = "results/demux.qza",
+        #"results/importqza/emp-paired-end-sequences.qza",
+        #"results/demultiplex/demux-full.qza",
+        #demuxsub = "results/subsamples/demux-subsample.qza",
+        #demuxsumm = "results/subsamples/demux-subsample.qzv",
+        "results/demux-subsample/per-sample-fastq-counts.tsv",
 
 
 include: "rules/emppaired.smk"

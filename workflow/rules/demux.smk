@@ -8,8 +8,6 @@ rule demux:
         demuxdet = "results/demultiplex/demux-details.qza",
     conda: 
         "../envs/qiime2-2022.2.yml"
-    log: 
-        ""
     shell: 
         "qiime demux emp-paired" 
         " --m-barcodes-file data/sample-metadata.tsv"
