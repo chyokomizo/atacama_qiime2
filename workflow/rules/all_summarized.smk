@@ -1,42 +1,42 @@
 rule summarize:
     input: 
-        
+        table = "results/table.qza",
     output:
-        
+        "results/summarized/table.qzv",
     conda: 
         "../envs/qiime2-2022.2.yml"
     log:
 
     shell:
         "qiime feature-table summarize "
-        "--i-table table.qza "
-        "--o-visualization table.qzv "
-        "--m-sample-metadata-file sample-metadata.tsv"
+        "--i-table {input.table} "
+        "--o-visualization {output} "
+        "--m-sample-metadata-file data/sample-metadata.tsv"
 
 rule feature:
     input: 
-        
+        repseq = "results/rep-seqs.qza",
     output:
-        
+        "results/summarized/rep-seqs.qzv",
     conda: 
         "../envs/qiime2-2022.2.yml"
     log:
 
     shell:
         "qiime feature-table tabulate-seqs "
-        "--i-data rep-seqs.qza "
-        "--o-visualization rep-seqs.qzv"
+        "--i-data {input.repseq} "
+        "--o-visualization {output}"
 
 rule tabulate:
     input: 
-        
+        denstats = "results/denoising-stats.qza",
     output:
-        
+        "results/summarized/denoising-stats.qzv",
     conda: 
         "../envs/qiime2-2022.2.yml"
     log:
 
     shell:
         "qiime metadata tabulate "
-        "--m-input-file denoising-stats.qza "
-        "--o-visualization denoising-stats.qzv"
+        "--m-input-file {input.denstats} "
+        "--o-visualization {output}"

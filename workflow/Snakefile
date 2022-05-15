@@ -7,6 +7,9 @@ rule all:
         "results/demux-subsample/per-sample-fastq-counts.tsv",
         "results/demux-subsample/demux.qza",
         "results/denoising-stats.qza",
+        "results/summarized/table.qzv",
+        "results/summarized/rep-seqs.qzv",
+        "results/summarized/denoising-stats.qzv",
 
 
 include: "rules/emppaired.smk"
@@ -14,3 +17,4 @@ include: "rules/demux.smk"
 include: "rules/subsamples.smk"
 include: "rules/filter_samples.smk"
 include: "rules/denoise_paired.smk"
+include: "rules/all_summarized.smk"
