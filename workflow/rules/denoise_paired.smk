@@ -1,10 +1,10 @@
 rule denoise_paired:
     input: 
-        demuxqza = "results/demux.qza",
+        demuxqza = "results/demux-subsample/demux.qza",
     output:
-        table = "results/table.qza"
-        repseq = "results/rep-seqs.qza"
-        denstats = "results/denoising-stats.qza"
+        table = "results/table.qza",
+        repseq = "results/rep-seqs.qza",
+        denstats = "results/denoising-stats.qza",
     conda: 
         "../envs/qiime2-2022.2.yml"
     log:
