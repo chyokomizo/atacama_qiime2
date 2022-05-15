@@ -5,6 +5,7 @@ rule all:
         #demuxsub = "results/subsamples/demux-subsample.qza",
         #demuxsumm = "results/subsamples/demux-subsample.qzv",
         "results/demux-subsample/per-sample-fastq-counts.tsv",
+        "results/demux-subsample/demux.qza",
 
 
 include: "rules/emppaired.smk"
